@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta charset="UTF-8">
+    <title>The Eternal Archive</title>
+</head>
+
+<body>
+<div class="audio-container">
+    <audio id="bg-track" src="audio/web_background_audio.mp3"></audio>
+
+    <button id="mute-btn" class="audio-btn">
+        <img id="audio-icon" src="images/audio_icon_off.png" alt="Audio Toggle">
+    </button>
+</div>
+<header class="sanctuary-header">
+    <img src="images/logo_port.png" alt="The Spiked Arch" class="main-logo">
+    <h1>The Eternal Archive</h1>
+    <nav class="sacred-nav">
+        <a href="#home">[ HOME ]</a>
+        <a href="#wwr">[ WWR ]</a>
+        <a href="#ice">[ ICE ]</a>
+        <a href="#about">[ ABOUT ME ]</a>
+        <a href="#quests">[ QUESTS ]</a>
+    </nav>
+</header>
+
+<main class="archive-grid">
+    <section class="grid-item">
+        <h2>IMAGE ARCHIVE</h2>
+        <p>Visual records.</p>
+    </section>
+
+    <section class="grid-item">
+        <h2>THE PORTAL</h2>
+        <p>Digital sanctuary of knowledge.</p>
+    </section>
+
+    <section class="grid-item wide">
+        <h2>COMPLETED QUESTS</h2>
+        <p>HTML: Meh | CSS: In Progress</p>
+    </section>
+
+    <section class="grid-item">
+        <h2>SACRED SCRIPTS</h2>
+        <p>HTML, CSS, JavaScript</p>
+    </section>
+
+    <section class="grid-item">
+        <h2>PETITION ARCHMAGE</h2>
+        <form>
+            <input type="text" placeholder="Name">
+            <button type="submit">SUBMIT</button>
+        </form>
+    </section>
+</main>
+    
+    <footer>
+        <p>© 2026</p>
+    </footer>
+  <script>
+        const track = document.getElementById('bg-track');
+        const playlist = [
+            "audio/web_background_audio.mp3",
+            "audio/web_background_audio_2.mp3"
+        ];
+        let currentTrack = 0;
+
+        // Logic to switch tracks automatically
+        track.addEventListener('ended', () => {
+            currentTrack = (currentTrack + 1) % playlist.length;
+            track.src = playlist[currentTrack];
+            track.play();
+        });
+        document.addEventListener('click', () => {
+            if (track.paused) {
+                track.play();
+            }
+        }, { once: true });
+
+        const audio = document.getElementById('bg-track');
+        const muteBtn = document.getElementById('mute-btn');
+        const icon = document.getElementById('audio-icon');
+
+        const songs = [
+            "audio/web_background_audio.mp3",
+            "audio/web_background_audio_2.mp3"
+        ];
+        let songIndex = 0;
+
+    
+        muteBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+    
+            if (audio.muted) {
+        icon.classList.add('is-muted');
+         } else {
+        icon.classList.remove('is-muted');
+            if (audio.paused) audio.play();
+            }
+        });
+
+
+        audio.addEventListener('ended', () => {
+            songIndex = (songIndex + 1) % songs.length;
+            audio.src = songs[songIndex];
+            audio.play();
+        });
+
+        document.addEventListener('click', () => {
+            if (audio.paused && !audio.muted) audio.play();
+        }, { once: true });
+    </script>
+</body>
+</html>

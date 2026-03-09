@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICE Archive | The Eternal Archive</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <header class="sanctuary-header">
+        <img src="images/logo_port.png" alt="The Spiked Arch" class="main-logo">
+        <h1>The Eternal Archive</h1>
+        <nav class="sacred-nav">
+            <a href="portfolio.html">[ HOME ]</a>
+            <a href="wwr.html">[ WWR ]</a>
+            <a href="ice.html">[ ICE ]</a>
+            <a href="about.html">[ ABOUT ME ]</a>
+            <a href="quests.html">[ QUESTS ]</a>
+        </nav>
+    </header>
+
+    <main class="archive-grid">
+        <section class="grid-item wide">
+            <h2>ICE CHALLENGE CHRONICLES</h2>
+            <p>A collection of technical trials performed to master the arts of HTML and CSS.</p>
+        </section>
+
+        <section class="grid-item">
+            <h3>Apostle Light</h3>
+            <p>We learned to make boxes and place images using HTML.</p>
+            <a href="../ice/apostle_spotlight/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Favorite Devo</h3>
+            <p>We learned to use and manipulate grids for structured layouts.</p>
+            <a href="../ice/favorite_devo/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Gallery</h3>
+            <p>We learned to resize and optimize files to keep the archive efficient.</p>
+            <a href="../ice/gallery/gallery.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Grid Flags</h3>
+            <p>We learned to use grids and colors to construct symbolic banners.</p>
+            <a href="../ice/grid_flags/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Positioning</h3>
+            <p>We used grids to command color "blocks" into precise positions.</p>
+            <a href="../ice/positioning/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Prophet Cards</h3>
+            <p>Refining the placement of images and text, similar to the Apostle trial.</p>
+            <a href="../ice/prophet_cards/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Signup</h3>
+            <p>We learned to create interactive forms and functional buttons.</p>
+            <a href="../ice/signup/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+
+        <section class="grid-item">
+            <h3>Valentines</h3>
+            <p>Understanding how different CSS/JS can transform the same HTML structure.</p>
+            <a href="../ice/valentines/index.html" target="_blank">[ VIEW CHALLENGE ]</a>
+        </section>
+    </main>
+
+    <footer style="text-align: center; color: #ba0303; padding: 20px; font-family: 'Crimson Text', serif;">
+        <p>Footer: © 2026</p>
+    </footer>
+
+    <div class="audio-container">
+        <audio id="bg-track" src="audio/web_background_audio.mp3"></audio>
+        <button id="mute-btn" class="audio-btn">
+            <img id="audio-icon" src="images/audio_icon_off.png" alt="Mute Toggle">
+        </button>
+    </div>
+
+    <script>
+        const track = document.getElementById('bg-track');
+        const playlist = [
+            "audio/web_background_audio.mp3",
+            "audio/web_background_audio_2.mp3"
+        ];
+        let currentTrack = 0;
+
+        // Logic to switch tracks automatically
+        track.addEventListener('ended', () => {
+            currentTrack = (currentTrack + 1) % playlist.length;
+            track.src = playlist[currentTrack];
+            track.play();
+        });
+        document.addEventListener('click', () => {
+            if (track.paused) {
+                track.play();
+            }
+        }, { once: true });
+
+        const audio = document.getElementById('bg-track');
+        const muteBtn = document.getElementById('mute-btn');
+        const icon = document.getElementById('audio-icon');
+
+        const songs = [
+            "audio/web_background_audio.mp3",
+            "audio/web_background_audio_2.mp3"
+        ];
+        let songIndex = 0;
+
+    
+        muteBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+    
+            if (audio.muted) {
+        icon.classList.add('is-muted');
+         } else {
+        icon.classList.remove('is-muted');
+            if (audio.paused) audio.play();
+            }
+        });
+
+
+        audio.addEventListener('ended', () => {
+            songIndex = (songIndex + 1) % songs.length;
+            audio.src = songs[songIndex];
+            audio.play();
+        });
+
+        document.addEventListener('click', () => {
+            if (audio.paused && !audio.muted) audio.play();
+        }, { once: true });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* titles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+/* texts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+main {
+    background-color: #1a1a1a; 
+    border: 3px solid #8a0303; 
+    outline: 2px solid #ff0000; 
+    outline-offset: 3px; 
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 35px;
+    max-width: 1000px;
+    margin-top: -25px;
+}
+
+.grid-item {
+    background-color: #0a0a0a; 
+    border: 1px solid #ba0303; 
+    padding: 20px;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.grid-item h2 {
+    font-family: 'Cinzel', serif;
+    color: #ff0000;
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.grid-item p {
+    font-family: 'Crimson Text', serif;
+    color: #e0e0e0;
+}
+
+.grid-item input {
+    background: #1a1a1a;
+    border: 1px solid #ba0303;
+    color: white;
+    padding: 5px;
+}
+
+body {
+    background-color: #0a0a0a; 
+    color: #e0e0e0;            
+    font-family: 'Crimsom Text', serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: #ff0000;            
+    text-shadow: 0 0 10px #8a0303;
+}
+
+.sanctuary-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    padding: 50px 20px;
+    background: #0a0a0a;
+}
+
+.nav-links {
+    color: #e0e0e0; 
+    font-family: 'Crimson Text', serif; 
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.main-logo {
+    height: 350px; 
+    width: auto;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: #ff0000;
+    font-size: 2.5rem;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    transition: 0.3s ease;
+}
+
+.sacred-nav {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sacred-nav a {
+    font-family: 'Cinzel', serif;
+    color: #e0e0e0; 
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+
+.sacred-nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 8px #ff0000;
+}
+
+.audio-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.audio-btn {
+    background: #0a0a0a; 
+    border: 2px solid #ba0303; 
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ba0303; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#audio-icon {
+   
+    width: 50px; 
+    height: auto;
+    
+    filter: drop-shadow(0 0 8px #ff0000);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+
+.is-muted {
+    filter: grayscale(1) !important;
+    opacity: 0.3;
+}
