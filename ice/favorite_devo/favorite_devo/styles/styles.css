@@ -77,17 +77,38 @@ table.blueTable thead th {
   color: #FFFFFF;
   text-align: center;
 }
-table.blueTable tfoot td {
-  font-size: 10px;
-  
+.devo-form {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  max-width: 350px;   /* makes form smaller */
 }
-table.blueTable tfoot .links {
-  text-align: right;
+
+.devo-form label {
+  font-weight: bold;
+  font-size: 14px;
 }
-table.blueTable tfoot .links a{
-  display: inline-block;
-  background: #1C6EA4;
-  color: #7b7b7b;
-  padding: 2px 8px;
-  border-radius: 5px;
+
+.devo-form input {
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.devo-form button {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #032241;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.devo-form button:hover {
+  background-color: #1C6EA4;
 }

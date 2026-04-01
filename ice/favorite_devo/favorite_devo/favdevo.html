@@ -15,8 +15,7 @@
     </header>
     <main>
       <div class="content-box">
-        <!-- Add your devotional content here -->
-      <table class="blueTable">
+        <table class="blueTable">
           <thead>
           <tr>
             <th>Speaker</th>
@@ -27,33 +26,46 @@
           </thead>
           <tbody>
           <tr>
-            <td>   Lawrence E. Corbridge </td>
-            <td>  "Stand Forever" </td>
-            <td> Brigham Young University, Utah </td>
-            <td> 2019 </td>
+            <td>Lawrence E. Corbridge</td>
+            <td>"Stand Forever"</td>
+            <td>Brigham Young University, Utah</td>
+            <td>2019</td>
           </tr>
           <tr>
-            <td> President Russell M. Nelson </td>
-            <td> "Choices for Eternity" </td>
-            <td> Salt Lake City, Utah </td>
-            <td> 2022 </td>
-          </tr> 
+            <td>President Russell M. Nelson</td>
+            <td>"Choices for Eternity"</td>
+            <td>Salt Lake City, Utah</td>
+            <td>2022</td>
+          </tr>
           <tr>
-            <td>  Elder Jeffrey R. Holland </td>
-            <td>  "A Future Filled with Hope" </td>
-            <td> Salt Lake City, Utah </td>
-            <td> 2023 </td>
-          </tr> 
+            <td>Elder Jeffrey R. Holland</td>
+            <td>"A Future Filled with Hope"</td>
+            <td>Salt Lake City, Utah</td>
+            <td>2023</td>
+          </tr>
           </tbody>
-          <tfoot>
-            <tr>
-            <td> [Add Speaker Here]</td>
-            <td> [Add Title Here]</td>
-            <td> [Add Location Here]</td>
-            <td> [Add Year Here]</td>
-            </tr>
-          </tfoot>
-         </table>
+        </table>
+
+        <h2>Add a Devotional</h2>
+
+        <form class="devo-form">
+
+          <label for="speaker">Speaker:</label>
+          <input type="text" id="speaker" name="speaker">
+
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title">
+
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location">
+
+          <label for="year">Year:</label>
+          <input type="number" id="year" name="year">
+
+          <button type="submit">Add Devotional</button>
+
+        </form>
+
       </div>
     </main>
   </div>
